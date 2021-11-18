@@ -9,7 +9,7 @@ package com.mycompany.ourferret;
  *
  * @author youne
  */
-public class LocusModel {
+public class LocusModel extends ElementSaisiModel{
     protected int chromosome;
     protected int start;
     protected int end;

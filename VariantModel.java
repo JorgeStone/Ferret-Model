@@ -9,7 +9,7 @@ package com.mycompany.ourferret;
  *
  * @author youne
  */
-public class VariantModel {
+public class VariantModel extends ElementSaisiModel {
 
     public VariantModel() {
     }
