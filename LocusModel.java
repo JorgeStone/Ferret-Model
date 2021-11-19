@@ -13,13 +13,11 @@ public class LocusModel extends ElementSaisiModel{
     protected int chromosome;
     protected int start;
     protected int end;
-    protected boolean getEsp;
 
-    public LocusModel(int chromosome, int start, int end, boolean getEsp) {
+    public LocusModel(int chromosome, int start, int end) {
         this.chromosome = chromosome;
         this.start = start;
         this.end = end;
-        this.getEsp = getEsp;
     }
     
 }
