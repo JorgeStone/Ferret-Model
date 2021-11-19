@@ -1,3 +1,5 @@
+package com.mycompany.ourferret;
+
 import com.mycompany.ourferret.FoundGeneAndRegion;
 import com.mycompany.ourferret.NCBIData;
 public class Test {
