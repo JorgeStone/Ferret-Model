@@ -46,10 +46,10 @@ public class FoundGeneAndRegion {
 
     public void affiche(){
         System.out.println("Les gênes trouvés sont :"+ this.geneNamesFound);
-        for(int i=0; i<1; i++){
-            System.out.println("Ils sont situés dans le chromosome :"+ this.locationOfFoundGenes[i].chromosome);
-            System.out.println("Le début :"+ this.locationOfFoundGenes[i].start);
-            System.out.println("La fin :"+ this.locationOfFoundGenes[i].end);
+        for(int i=0; i<locationOfFoundGenes.length; i++){
+            System.out.println("Ils sont situés dans le chromosome :"+ this.locationOfFoundGenes[i].getChromosome());
+            System.out.println("Le début :"+ this.locationOfFoundGenes[i].getStart());
+            System.out.println("La fin :"+ this.locationOfFoundGenes[i].getEnd());
         }
 
 

@@ -1,15 +1,17 @@
 package com.mycompany.ourferret;
 
-import com.mycompany.ourferret.FoundGeneAndRegion;
-import com.mycompany.ourferret.NCBIData;
 public class Test {
+
     public static void main(String[] args) {
         String[] listgene = new String[1];
-        listgene[0] = ("KCNT2");
+        listgene[0] = ("BDNF");
         FoundGeneAndRegion res;
-        NCBIData ncbi = new NCBIData();
-        res = NCBIData.getQueryFromGeneName(listgene,true);
-        res.affiche();
+        res = NCBIData.getQueryFromGeneName(listgene, true);
+        String[] test = new String[1];
+        test[0] = "CCR5";
+        FoundGeneAndRegion inputRegionList = NCBIData.getQueryFromGeneName(test, true);
+        inputRegionList.affiche();
+        
 
     }
 }

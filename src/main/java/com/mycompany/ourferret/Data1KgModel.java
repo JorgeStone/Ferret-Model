@@ -7,10 +7,14 @@ package com.mycompany.ourferret;
 
 import java.util.LinkedList;
 import javax.swing.SwingWorker;
-
 /**
- *
- * @author youne
+ * Classe pour le traitement général sur le serveur 1000 Génomes.
+ * Cette classe nécessite d'être fortement retravaillée, notamment pour gérer les différents format possibles d'entrées.
+ * @Authors: Mathieu JUNG-MULLER & Bozhou WANG & Imane SALMI & Imane TAHIRI
+*/
+/**
+ * Classe globale pour objectif de traiter les données de serveur 1000 Génomes
+ * @author younes
  */
 public class Data1KgModel extends SwingWorker<Integer,String>{
     String ftpAdress;
