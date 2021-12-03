@@ -60,14 +60,14 @@ public class Data1KgModel extends SwingWorker<Integer,String>{
             for (int e=0; e<geneQueries.size(); e++){
                 geneList[e] = ((GenebyNameModel)(geneQueries.get(e))).getName();
             }
-            geneLocationFromGeneName[0] = NCBIData.getQueryFromGeneName(geneList,settings.isVersionHG());
+            geneLocationFromGeneName[0] = NCBIData.get_query_from_gene_name(geneList,settings.isVersionHG());
         }else{
             String[] geneList;
             geneList = new String[geneQueries.size()];
             for (int e=0; e<geneQueries.size(); e++){
                 geneList[e] = Integer.toString(((GenebyIDModel)geneQueries.get(e)).getId());
             }
-            geneLocationFromGeneName[0] = NCBIData.getQueryFromGeneID(geneList,settings.isVersionHG());
+            geneLocationFromGeneName[0] = NCBIData.get_query_from_gene_ID(geneList,settings.isVersionHG());
             }        
     }
 

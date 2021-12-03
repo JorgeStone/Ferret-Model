@@ -6,10 +6,10 @@ public class Test {
         String[] listgene = new String[1];
         listgene[0] = ("BDNF");
         FoundGeneAndRegion res;
-        res = NCBIData.getQueryFromGeneName(listgene, true);
+        res = NCBIData.get_query_from_gene_name(listgene, true);
         String[] test = new String[1];
         test[0] = "CCR5";
-        FoundGeneAndRegion inputRegionList = NCBIData.getQueryFromGeneName(test, true);
+        FoundGeneAndRegion inputRegionList = NCBIData.get_query_from_gene_name(test, true);
         inputRegionList.affiche();
         
 
