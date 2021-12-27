@@ -13,13 +13,12 @@ public class SettingsModel {
     private int version1KG; 
     private String output;
     private boolean versionHG;
-    private boolean espMAF;
+    private double maf;
 
-    public SettingsModel(int version1KG, String output, boolean versionHG, boolean espMAF) {
+    public SettingsModel(int version1KG, String output, boolean versionHG) {
         this.version1KG = version1KG;
         this.output = output;
         this.versionHG = versionHG;
-        this.espMAF = espMAF;
     }
 
     public int getVersion1KG() {
@@ -46,13 +45,15 @@ public class SettingsModel {
         this.versionHG = versionHG;
     }
 
-    public boolean isEspMAF() {
-        return espMAF;
+    public double getMaf() {
+        return maf;
     }
 
-    public void setEspMAF(boolean espMAF) {
-        this.espMAF = espMAF;
+    public void setMaf(double maf) {
+        this.maf = maf;
     }
+
+
     
     
 }

@@ -19,7 +19,7 @@ public class LocusModel implements Comparable<LocusModel>{
         this.start = start;
         this.end = end;
     }
-
+    
     public String getChromosome() {
         return chromosome;
     }
@@ -43,10 +43,22 @@ public class LocusModel implements Comparable<LocusModel>{
     public void setEnd(int end) {
         this.end = end;
     }
-
+    public int chrToInt(){
+        if("X".equals(this.chromosome) || "Y".equals(this.chromosome)){
+            return 23;
+        }
+        else{
+            return Integer.parseInt(this.chromosome);
+        }
+    }
     @Override
     public int compareTo(LocusModel o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        if (! (this.chromosome.equals(o.chromosome))){
+            return this.chrToInt() - o.chrToInt();
+        }
+        else{
+            return this.start - o.start;
+        }
+        }
     
 }
