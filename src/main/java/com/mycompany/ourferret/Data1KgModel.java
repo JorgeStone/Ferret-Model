@@ -194,7 +194,7 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
         }
         return sortedQueries;
     }
-
+    
     public static HashMap<String, Integer> getPopulation_Indices(String fileName) throws IOException {
         HashMap<String, Integer> peopleSet = new HashMap<>(3500);
 
@@ -210,12 +210,12 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
 
         return peopleSet;
     }
-
+//getPeopleString_Phase3 
     public static String getPeopleString_Phase3(String NumOfChr) throws IOException {
         // helper method for the below method
         String result = null;
         try {
-            String webAddress = "http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr" + NumOfChr + ".phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz";
+            String webAddress = "http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr" + NumOfChr + ".phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz";
             TabixReader ourtab = new TabixReader(webAddress);
             result = ourtab.readLine();
             while (!result.contains("CHROM")) {
@@ -226,7 +226,7 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
         }
         return result;
     }
-
+// getPeopleString_Phase3_GRCh38
     public static String getPeopleString_Phase3_GRCh38(String NumOfChr) throws IOException {
         String result = null;
         try {
@@ -240,7 +240,7 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
         }
         return result;
     }
-
+// getPeopleString_Phase1 fonctionne bien
     public static String getPeopleString_Phase1(String NumOfChr) throws IOException {
         String result = null;
         try {
@@ -424,7 +424,6 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
             }
         } else {
 
-            // VCF writing code is right here for compatibility with swingWorker
             try {
                 String fileName;
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH_mm_ss");
@@ -572,9 +571,7 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
                 }
                 int numChr = 0;
                 double freqZero = 0, freqOne = 0;
-                // only write for biallelic variants
                 if (variantPossibilities.length == 2) {
-                    //CN = CNV
                     if (!text[4].contains("CN")) {
                         for (int i = 0; i < peopleOfInterest.size(); i++) {
                             String tempPerson = peopleOfInterest.get(i);
@@ -591,8 +588,6 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
                             }
                             variantFreq[temp]++;
                         }
-                        // If you were thinking index should be incremented here, you're right
-                        // but now it's in essentially the same loop several lines down
                     } else if (text[4].contains("CN")) {
                         for (int i = 0; i < peopleOfInterest.size(); i++) {
                             String tempPerson = peopleOfInterest.get(i);
@@ -625,8 +620,6 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
                 if (text[2].contains("indel")) {
                     variantPossibilities = retainedPossibility;
                 }
-                // frq file is written here, ESP data is added
-
                 if (variantPossibilities.length == 2 && freqOne >= settings.getMaf() && freqZero >= settings.getMaf()) {
                     frqFileEmpty = false;
                     frqWrite.write(text[0] + "\t" + text[2] + "\t" + text[1] + "\t" + variantPossibilities[0] + "\t"
@@ -635,16 +628,11 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
                 }
 
             }
-            // this bracket marks the end of VCF reading
-            //System.out.println("ESP Error Count: " + espErrorCount);
-            // Don't need to have MAF threshold here, because not written to genotypes array if MAF too low
             if (settings.getOutput().equals("all")) {
                 for (int i = 0; i < countPeople; i++) {
-                    // Write information about individuals
                     for (int j = 0; j <= 5; j++) {
                         pedWrite.write(genotypes[i + 1][j] + "\t");
                     }
-                    // Write information about genotypes
                     for (int j = 6; j < index * 2 + 6; j++) {
                         if (Double.parseDouble(genotypes[0][j]) >= settings.getMaf() && (1 - Double.parseDouble(genotypes[0][j])) >= settings.getMaf()) {
                             pedWrite.write(genotypes[i + 1][j] + "\t");
