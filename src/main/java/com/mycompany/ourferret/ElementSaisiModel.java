@@ -18,6 +18,10 @@ public class ElementSaisiModel {
         this.population = population;
     }
 
+    public ElementSaisiModel() {
+    }
+    
+
     public String getFileAdresse() {
         return fileAdresse;
     }

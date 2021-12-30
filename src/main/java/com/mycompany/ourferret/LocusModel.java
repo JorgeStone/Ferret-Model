@@ -9,12 +9,13 @@ package com.mycompany.ourferret;
  *
  * @author youne
  */
-public class LocusModel implements Comparable<LocusModel>{
+public class LocusModel extends ElementSaisiModel implements Comparable<LocusModel>{
     private String chromosome;
     private int start;
     private int end;
 
     public LocusModel(String chromosome, int start, int end) {
+        super();
         this.chromosome = chromosome;
         this.start = start;
         this.end = end;
