@@ -12,9 +12,12 @@ package com.mycompany.ourferret;
 public class GenebyIDModel extends GeneModel {
     private int id;
 
-    public GenebyIDModel(int id) {
+    public GenebyIDModel(int id, String fileAdresse, String[] population) {
+        super(fileAdresse, population);
         this.id = id;
     }
+
+    
 
     public int getId() {
         return id;

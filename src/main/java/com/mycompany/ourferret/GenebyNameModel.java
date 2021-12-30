@@ -12,9 +12,12 @@ package com.mycompany.ourferret;
 public class GenebyNameModel extends GeneModel{
     private String name;
 
-    public GenebyNameModel(String name) {
+    public GenebyNameModel(String name, String fileAdresse, String[] population) {
+        super(fileAdresse, population);
         this.name = name;
     }
+
+    
 
     public String getName() {
         return name;

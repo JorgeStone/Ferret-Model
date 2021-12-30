@@ -11,7 +11,8 @@ package com.mycompany.ourferret;
  */
 public class VariantModel extends ElementSaisiModel {
 
-    public VariantModel() {
+    public VariantModel(String fileAdresse, String[] population) {
+        super(fileAdresse, population);
     }
-    
+
 }

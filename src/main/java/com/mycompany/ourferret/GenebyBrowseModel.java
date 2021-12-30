@@ -12,9 +12,11 @@ package com.mycompany.ourferret;
 public class GenebyBrowseModel extends GeneModel{
     private String fileLocation;
 
-    public GenebyBrowseModel(String fileLocation) {
-        this.fileLocation = fileLocation;
+    public GenebyBrowseModel(String fileAdresse, String[] population) {
+        super(fileAdresse, population);
     }
+
+    
 
     public String getFileLocation() {
         return fileLocation;

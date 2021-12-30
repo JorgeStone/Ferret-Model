@@ -12,9 +12,12 @@ package com.mycompany.ourferret;
 public class VariantbyIDModel extends VariantModel {
     private int id;
 
-    public VariantbyIDModel(int id) {
+    public VariantbyIDModel(int id, String fileAdresse, String[] population) {
+        super(fileAdresse, population);
         this.id = id;
     }
+
+
 
     public int getId() {
         return id;

@@ -10,8 +10,7 @@ package com.mycompany.ourferret;
  * @author youne
  */
 public class GeneModel extends ElementSaisiModel{
-
-    public GeneModel() {
-    }
-    
+    public GeneModel(String fileAdresse, String[] population) {
+        super(fileAdresse, population);
+    } 
 }

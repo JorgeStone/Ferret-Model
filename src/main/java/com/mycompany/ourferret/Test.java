@@ -27,12 +27,12 @@ public class Test {
     }
 
     public static void main(String[] args) throws IOException {
-
         String[] test = new String[2];
         test[1] = "MICB";
         test[0] = "CCR5";
-        String result = Data1KgModel.getPeopleString_Phase3("23");
-        System.out.println(result);
+        FoundGeneAndRegion result;
+        result = NCBIData.getQueryFromGeneName(test,true);
+        result.affiche();
 
         
     }

@@ -167,7 +167,7 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
         }
         return true;
     }
-
+// sortLocus fonctionne bien
     public static ArrayList<LocusModel> sortLocus(LocusModel[] queries) {
 
         ArrayList<ArrayList<LocusModel>> sortedByChromosome = new ArrayList<>(23);
@@ -194,7 +194,7 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
         }
         return sortedQueries;
     }
-    
+// getPopulation_Indices est fonctionnelle
     public static HashMap<String, Integer> getPopulation_Indices(String fileName) throws IOException {
         HashMap<String, Integer> peopleSet = new HashMap<>(3500);
 
@@ -210,7 +210,7 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
 
         return peopleSet;
     }
-//getPeopleString_Phase3 
+//getPeopleString_Phase3  fonctionne très bien
     public static String getPeopleString_Phase3(String NumOfChr) throws IOException {
         // helper method for the below method
         String result = null;
@@ -226,7 +226,7 @@ public class Data1KgModel extends SwingWorker<Integer, String> {
         }
         return result;
     }
-// getPeopleString_Phase3_GRCh38
+// getPeopleString_Phase3_GRCh38, il marche pas car le répertoire suppoting n'est pas disponible.
     public static String getPeopleString_Phase3_GRCh38(String NumOfChr) throws IOException {
         String result = null;
         try {

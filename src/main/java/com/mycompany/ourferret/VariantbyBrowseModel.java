@@ -12,10 +12,12 @@ package com.mycompany.ourferret;
 public class VariantbyBrowseModel extends VariantModel {
     private String fileLocation;
 
-    public VariantbyBrowseModel(String fileLocation) {
+    public VariantbyBrowseModel(String fileLocation, String fileAdresse, String[] population) {
+        super(fileAdresse, population);
         this.fileLocation = fileLocation;
     }
 
+    
     public String getFileLocation() {
         return fileLocation;
     }
